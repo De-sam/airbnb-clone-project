@@ -198,3 +198,36 @@ Provides an alternative to REST with flexible and efficient querying. Developers
 
 ### ⚡ Performance Optimization
 Implements caching and database indexing to improve response times and scalability. This ensures smooth performance even as the number of users, listings, and bookings grows.
+
+
+## 🔐 API Security
+
+Security is a top priority in the development of this backend system. The following measures are implemented to ensure user data, transactions, and platform integrity are fully protected.
+
+### 🔑 Authentication
+All API endpoints require secure user authentication using token-based mechanisms such as JSON Web Tokens (JWT).  
+**Why it matters:** Ensures that only verified users can access their account and perform authorized actions, reducing the risk of unauthorized access or identity theft.
+
+### 🛂 Authorization
+Role-based access control is used to differentiate between users (e.g., guest vs. host vs. admin).  
+**Why it matters:** Protects sensitive operations—such as modifying properties or accessing bookings—ensuring users only perform actions allowed by their role.
+
+### 🚦 Rate Limiting
+Rate limiting is applied to prevent abuse of the APIs through spamming or brute force attacks.  
+**Why it matters:** Helps maintain service availability and protects against denial-of-service (DoS) attacks or excessive usage by malicious actors.
+
+### 🧊 Data Encryption
+Sensitive data such as passwords and payment details are encrypted in transit and at rest.  
+**Why it matters:** Protects user credentials and financial data from being intercepted or leaked, enhancing overall platform trustworthiness.
+
+### 🧼 Input Validation & Sanitization
+All input data is validated and sanitized before processing.  
+**Why it matters:** Prevents common vulnerabilities such as SQL injection, XSS, and data corruption, ensuring the system handles only clean, expected data.
+
+### 💸 Secure Payment Processing
+Payment-related endpoints are protected with heightened security measures including transaction validation and secure third-party integrations.  
+**Why it matters:** Prevents fraud and ensures that financial transactions are handled safely and correctly.
+
+### 📝 Audit Logging
+All sensitive actions (e.g., payments, bookings, user changes) are logged for auditing and traceability.  
+**Why it matters:** Helps detect suspicious behavior, support incident investigations, and meet compliance requirements.
