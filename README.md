@@ -231,3 +231,29 @@ Payment-related endpoints are protected with heightened security measures includ
 ### 📝 Audit Logging
 All sensitive actions (e.g., payments, bookings, user changes) are logged for auditing and traceability.  
 **Why it matters:** Helps detect suspicious behavior, support incident investigations, and meet compliance requirements.
+
+## 🚀 CI/CD Pipeline
+
+CI/CD (Continuous Integration and Continuous Deployment) pipelines automate the software development lifecycle by integrating code, running tests, and deploying changes without manual intervention.
+
+### 🧪 Continuous Integration (CI)
+CI ensures that every code change is automatically tested and merged into the main codebase only if it passes all checks.  
+**Why it matters:** It helps catch bugs early, maintains code quality, and prevents broken builds from reaching production.
+
+### 🚚 Continuous Deployment (CD)
+CD automates the release of tested code to production or staging environments.  
+**Why it matters:** It allows for faster, safer deployments and reduces the risk of human error during releases.
+
+### 🛠️ Tools Used
+- **GitHub Actions**: Automates workflows for testing, building, and deploying the project.
+- **Docker**: Ensures consistent environments across development, testing, and deployment.
+- **Celery + Redis**: Manages background tasks and asynchronous job queues in production.
+- **Heroku / Render / AWS / DigitalOcean** *(optional)*: Platforms where automated deployment may take place.
+
+### 🔄 Pipeline Flow Example
+1. Developer pushes code to GitHub.
+2. GitHub Actions runs lint checks, tests, and builds the Docker image.
+3. If successful, the image is deployed to a staging or production server.
+4. Notifications/logs are generated for traceability.
+
+CI/CD is crucial for maintaining a stable and scalable Airbnb Clone backend, enabling faster iterations and reliable feature delivery.
