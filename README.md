@@ -76,3 +76,97 @@ A containerization platform.
 ### 🔁 CI/CD Pipelines
 Automated tools and scripts for Continuous Integration and Continuous Deployment.  
 **Used for:** Automatically testing and deploying updates to ensure stability and reduce manual overhead.
+
+## 🗃️ Database Design
+
+The backend system is designed around a relational database structure with clear relationships between key entities. Below are the core models and how they interact.
+
+### 👤 Users
+Represents people using the platform—either as guests or hosts.
+
+**Key Fields:**
+- `id`: Unique identifier
+- `username`: Unique username
+- `email`: User’s email address
+- `password`: Hashed password
+- `is_host`: Boolean to distinguish between guest and host
+
+**Relationships:**
+- A user can **own multiple properties**
+- A user can **make multiple bookings**
+- A user can **write multiple reviews**
+
+---
+
+### 🏠 Properties
+Represents listings available for booking.
+
+**Key Fields:**
+- `id`: Unique identifier
+- `owner_id`: Foreign key to the user who owns the property
+- `title`: Property title or name
+- `description`: Detailed description
+- `location`: Address or city of the property
+
+**Relationships:**
+- A property **belongs to a user (host)**
+- A property can have **many bookings**
+- A property can have **many reviews**
+
+---
+
+### 📅 Bookings
+Represents reservations made by users.
+
+**Key Fields:**
+- `id`: Unique identifier
+- `property_id`: Foreign key to the booked property
+- `user_id`: Foreign key to the user who made the booking
+- `start_date`: Check-in date
+- `end_date`: Check-out date
+
+**Relationships:**
+- A booking **belongs to a user (guest)**
+- A booking **belongs to a property**
+- A booking **has one payment**
+
+---
+
+### 💳 Payments
+Represents transaction records for bookings.
+
+**Key Fields:**
+- `id`: Unique identifier
+- `booking_id`: Foreign key to the booking
+- `amount`: Payment amount
+- `status`: Payment status (e.g., paid, pending, failed)
+- `timestamp`: Date and time of payment
+
+**Relationships:**
+- A payment **belongs to one booking**
+- A booking **has one payment**
+
+---
+
+### 📝 Reviews
+Represents feedback left by users after a stay.
+
+**Key Fields:**
+- `id`: Unique identifier
+- `user_id`: Foreign key to the reviewer
+- `property_id`: Foreign key to the reviewed property
+- `rating`: Numeric score
+- `comment`: Review text
+
+**Relationships:**
+- A review **belongs to a user**
+- A review **belongs to a property**
+
+---
+
+### 🔗 Entity Relationship Summary
+- A **User** can own many **Properties**
+- A **User** can book many **Properties** (via **Bookings**)
+- A **User** can write many **Reviews**
+- A **Property** can have many **Bookings** and **Reviews**
+- Each **Booking** is tied to one **User**, one **Property**, and one **Payment**
