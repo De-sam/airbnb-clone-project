@@ -170,3 +170,31 @@ Represents feedback left by users after a stay.
 - A **User** can write many **Reviews**
 - A **Property** can have many **Bookings** and **Reviews**
 - Each **Booking** is tied to one **User**, one **Property**, and one **Payment**
+
+## ✨ Feature Breakdown
+
+This project replicates the core functionality of Airbnb, focusing on delivering a complete backend system that supports user interaction, property listing, and seamless booking experiences.
+
+### 👥 User Management
+Handles user registration, login, authentication, and profile updates. This feature allows users to securely access the platform, manage their accounts, and differentiate between guests and hosts.
+
+### 🏠 Property Management
+Enables hosts to create, update, delete, and retrieve property listings. It provides all the essential tools to manage rental properties, including descriptions, locations, and availability.
+
+### 📅 Booking System
+Allows guests to book properties for specific dates and manage their reservations. This feature handles check-in/check-out data and ensures property availability is respected during the booking process.
+
+### 💳 Payment Processing
+Supports secure handling of payments related to bookings. It tracks transaction status and ensures financial interactions are properly recorded, contributing to a trustworthy transaction flow.
+
+### 📝 Review System
+Lets guests leave feedback and ratings on properties they've booked. This feature enhances transparency, builds community trust, and helps future guests make informed decisions.
+
+### 📄 API Documentation (OpenAPI)
+All endpoints are documented using the OpenAPI standard. This ensures developers can easily understand and interact with the backend through clearly defined and testable API specifications.
+
+### 🚀 GraphQL API
+Provides an alternative to REST with flexible and efficient querying. Developers can request exactly the data they need, reducing payload size and improving frontend/backend coordination.
+
+### ⚡ Performance Optimization
+Implements caching and database indexing to improve response times and scalability. This ensures smooth performance even as the number of users, listings, and bookings grows.
